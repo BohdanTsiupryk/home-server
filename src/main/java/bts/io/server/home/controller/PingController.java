@@ -15,4 +15,10 @@ public class PingController {
         Message message = new Message(count++, String.valueOf(count));
         return ResponseEntity.ok(message);
     }
+
+    @GetMapping("/reset")
+    public ResponseEntity<String> reset() {
+        count = 0;
+        return ResponseEntity.ok("reset");
+    }
 }
